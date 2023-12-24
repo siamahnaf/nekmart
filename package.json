@@ -1,0 +1,43 @@
+{
+  "name": "seller",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@iconify/react": "^4.1.1",
+    "@material-tailwind/react": "^2.1.2",
+    "@types/node": "20.7.1",
+    "@types/react": "18.2.23",
+    "@types/react-dom": "18.2.8",
+    "eslint": "8.50.0",
+    "eslint-config-next": "13.5.3",
+    "graphql": "^16.8.1",
+    "moment": "^2.29.4",
+    "next": "13.5.3",
+    "omit-empty-es": "^1.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.2",
+    "react-images-uploading": "^3.1.7",
+    "react-qr-code": "^2.0.12",
+    "react-s3-typescript": "^2.3.0",
+    "react-to-print": "^2.14.15",
+    "slugify": "^1.6.6",
+    "suneditor": "^2.45.1",
+    "suneditor-react": "^3.6.1",
+    "tailwind-scrollbar": "^3.0.5",
+    "typescript": "5.2.2",
+    "urql": "^4.0.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.30",
+    "tailwindcss": "^3.3.3"
+  }
+}

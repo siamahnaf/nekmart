@@ -1,0 +1,1221 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type SuccessInfo {
+  success: Boolean!
+  message: String!
+}
+
+type Meta {
+  itemCount: Int
+  totalItems: Int
+  itemsPerPage: Int
+  totalPages: Int
+  currentPage: Int
+}
+
+type Provider {
+  name: String
+  id: String
+}
+
+type User {
+  id: String!
+  name: String
+  phone: String!
+  email: String
+  avatar: String
+  provider: Provider
+  is_verified: Boolean!
+  is_banned: Boolean!
+  role: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type GetUsers {
+  results: [User!]
+  meta: Meta
+}
+
+type SubCategory {
+  id: String!
+  name: String!
+  category: Category
+  image: String
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetSubCategories {
+  results: [SubCategory!]!
+  meta: Meta!
+}
+
+type Category {
+  id: String!
+  name: String!
+  image: String
+  main_category: MainCategory
+  sub_category: [SubCategory!]
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetCategories {
+  results: [Category!]!
+  meta: Meta!
+}
+
+type MainCategory {
+  id: String!
+  name: String!
+  description: String
+  category: [Category!]
+  image: String
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetMainCategories {
+  results: [MainCategory!]!
+  meta: Meta!
+}
+
+type Brand {
+  id: String!
+  name: String!
+  description: String
+  image: String
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetBrands {
+  results: [Brand!]!
+  meta: Meta!
+}
+
+type Tag {
+  id: String!
+  name: String!
+  description: String
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetTags {
+  results: [Tag!]!
+  meta: Meta
+}
+
+type Values {
+  value: String!
+  meta: String
+}
+
+type Attribute {
+  id: String!
+  name: String!
+  values: [Values!]
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetAttributes {
+  results: [Attribute!]!
+  meta: Meta!
+}
+
+type RedeemInfo {
+  success: Boolean!
+  code: String!
+  message: String!
+}
+
+type ApplyInfo {
+  success: Boolean!
+  message: String!
+  discount: String!
+}
+
+type CouponUser {
+  id: String!
+  code: String!
+  discount: String!
+  discountUnit: String!
+  points: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type CouponAdmin {
+  id: String!
+  name: String!
+  code: String!
+  discount: String!
+  discountUnit: String!
+  minimumPurchase: String!
+  expires: DateTime!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetCoupons {
+  results: [CouponAdmin!]!
+  meta: Meta!
+}
+
+type Address {
+  id: String!
+  name: String!
+  phone: String!
+  gender: String
+  address: String!
+  country: String!
+  city: String!
+  area: String!
+  postal: String!
+  default: Boolean
+  user: User
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Bank {
+  id: String!
+  name: String!
+  accNumber: String!
+  routing: String!
+  bankName: String!
+  branch: String!
+}
+
+type Seller {
+  id: String!
+  shopName: String!
+  phone: String!
+  logo: String!
+  banner: String!
+  address: String!
+  metaTitle: String
+  metaDescription: String
+  is_verified: Boolean!
+  is_banned: Boolean!
+  bank: Bank
+  user: User
+  totalReview: Float!
+  totalRating: Float!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetSellers {
+  results: [Seller!]!
+  meta: Meta!
+}
+
+type Flash {
+  id: String!
+  title: String!
+  image: String
+  thumb: String
+  start: DateTime!
+  expires: DateTime!
+  discount: String!
+  discountUnit: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetFlashes {
+  results: [Flash!]!
+  meta: Meta!
+}
+
+type ProductAttributeValues {
+  variant: String
+  price: String
+  quantity: String
+  image: String
+}
+
+type ProductAttributeVariant {
+  id: String
+  selected: [String!]
+}
+
+type ProductAttribute {
+  id: String
+  attributeIds: [Attribute!]
+  selectedVariant: [ProductAttributeVariant!]
+  attributes: [ProductAttributeValues!]
+}
+
+type ProductSpecification {
+  title: String
+  value: String
+}
+
+type ProductMeta {
+  title: String
+  description: String
+  metaTags: [String!]
+  image: String
+}
+
+type Product {
+  id: String
+  name: String!
+  seller: Seller!
+  main_category: MainCategory!
+  category: Category
+  sub_category: [SubCategory!]
+  brand: Brand
+  unit: String
+  minPurchase: String
+  tag: [Tag!]
+  refundAble: Boolean!
+  images: [String!]!
+  youtubeLink: String
+  flash: Flash
+  price: String!
+  quantity: String!
+  discount: String!
+  discountUnit: String!
+  attributes: ProductAttribute
+  description: String
+  specification: [ProductSpecification!]
+  visibility: Boolean!
+  is_approved: Boolean!
+  meta: ProductMeta
+  estimateDelivery: String
+  warranty: String
+  showStock: Boolean!
+  tax: String!
+  taxUnit: String!
+  totalPrice: String!
+  disclaimer: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetProducts {
+  results: [Product!]!
+  meta: Meta!
+}
+
+type OrderVariation {
+  id: String!
+  name: String!
+  variant: String!
+}
+
+type OrderProduct {
+  productId: Product
+  quantity: Float!
+  variation: [OrderVariation!]
+  tax: Float!
+  amount: Float!
+}
+
+type OrderSeller {
+  id: String!
+  sellerId: Seller
+  products: [OrderProduct!]
+  order: Order
+  price: Float!
+  status: String!
+  cancelBy: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetOrderSeller {
+  results: [OrderSeller!]!
+  meta: Meta!
+}
+
+type PaymentInfo {
+  paymentMethod: String
+  paymentId: String
+  provider: String
+}
+
+type Order {
+  id: String!
+  orderId: String!
+  sellers: [OrderSeller!]
+  couponDiscount: Float!
+  total: Float!
+  subtotal: Float!
+  shippingFees: Float!
+  shippingCount: Float!
+  estimateDelivery: String!
+  payment: PaymentInfo
+  shippingAddress: Address
+  billingAddress: Address
+  note: String
+  user: User
+  paymentStatus: Boolean!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetOrders {
+  results: [Order!]!
+  meta: Meta!
+}
+
+type Points {
+  id: String!
+  points: Float!
+  order: Order
+  user: User
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type UserPoints {
+  id: String!
+  points: Float!
+  user: User
+}
+
+type OrderSuccessInfo {
+  success: Boolean!
+  message: String!
+  redirectUri: String!
+}
+
+type CartVariation {
+  id: String!
+  name: String!
+  variant: String!
+}
+
+type Cart {
+  id: String!
+  productId: Product!
+  seller: Seller!
+  user: User!
+  reserved: Float!
+  attributes: [CartVariation!]
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Refundable {
+  id: String!
+  user: User
+  productId: Product
+  order: Order
+  quantity: Float
+  variation: [OrderVariation!]
+  seller: Seller
+  address: Address
+  couponDiscount: Float!
+  amount: Float!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Refund {
+  id: String!
+  refundableId: Refundable
+  user: User
+  quantity: Float
+  reason: String!
+  description: String!
+  status: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetRefund {
+  results: [Refund!]!
+  meta: Meta!
+}
+
+type Withdraw {
+  id: String!
+  seller: Seller
+  amount: Float!
+  releasedBy: User
+  method: String!
+  status: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetWithdraw {
+  results: [Withdraw!]!
+  meta: Meta!
+}
+
+type Income {
+  id: String
+  seller: Seller
+  orderId: Order
+  income: Float
+  paySuccess: Boolean
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetIncomes {
+  results: [Income!]!
+  meta: Meta!
+}
+
+type IncomeStatics {
+  currentIncomes: [Income!]
+  upcomingIncomes: [Income!]
+  lastPaymentDate: DateTime
+}
+
+type Platform {
+  id: String!
+  charge: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Shipping {
+  id: String!
+  name: String!
+  rateInsideDhaka: String!
+  rateOutsideDhaka: String!
+  rateInSavar: String!
+  estimateDelivery: String!
+  active: Boolean!
+  description: String
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetShippings {
+  results: [Shipping!]!
+  meta: Meta!
+}
+
+type Banner {
+  id: String!
+  name: String!
+  url: String!
+  path: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Sections {
+  id: String!
+  name: String!
+  description: String!
+  publish: Boolean!
+  base: String!
+  category: MainCategory
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type SectionProduct {
+  section: Sections
+  products: [Product!]
+}
+
+type Settings {
+  id: String
+  logo: String
+  icon: String
+  siteTitle: String
+  slogan: String
+  metaTitle: String
+  metaDescription: String
+  metaTag: [String!]
+  siteUrl: String
+  ogTitle: String
+  ogDescription: String
+  ogImage: String
+  email: String
+  phone: String
+  corporateOffice: String
+  headOffice: String
+  facebook: String
+  instagram: String
+  youtube: String
+  twitter: String
+  linkedIn: String
+  created_at: DateTime
+  updated_at: DateTime
+}
+
+type Wishlist {
+  id: String!
+  user: User!
+  product: Product!
+  created_at: DateTime!
+  update_at: DateTime!
+}
+
+type CheckWishlist {
+  status: Boolean!
+  message: String!
+}
+
+type Preorder {
+  id: String!
+  firstName: String!
+  lastName: String!
+  phone: String!
+  address: String!
+  email: String!
+  productImage: [String!]
+  productUrl: [String!]!
+  note: String
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetPreorder {
+  results: [Preorder!]!
+  meta: Meta!
+}
+
+type UserAnalytics {
+  totalCart: Float
+  totalWishlist: Float
+  totalOrder: Float
+  defaultAddress: Address
+}
+
+type Review {
+  id: String!
+  user: User
+  seller: Seller
+  product: Product
+  image: [String!]
+  comment: String!
+  reply: String
+  rating: Float!
+  publish: Boolean!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type GetReviews {
+  results: [Review!]!
+  meta: Meta!
+}
+
+type Query {
+  getProfile: User!
+  getUsers(searchInput: SearchInput!): GetUsers!
+  getAdmins(searchInput: SearchInput!): GetUsers!
+  getBrands(searchInput: SearchInput!): GetBrands!
+  getBrand(id: String!): Brand!
+  getTags(searchInput: SearchInput!): GetTags!
+  getTag(id: String!): Tag!
+  getMainCategories(searchInput: SearchInput!): GetMainCategories!
+  getMainCategory(id: String!): MainCategory!
+  getCategories(searchInput: SearchInput!): GetCategories!
+  getCategory(id: String!): Category!
+  getSubCategories(searchInput: SearchInput!): GetSubCategories!
+  getSubCategory(id: String!): SubCategory!
+  getAttributes(searchInput: SearchInput!): GetAttributes!
+  getAttribute(id: String!): Attribute!
+  getCouponByUser: [CouponUser!]!
+  getCouponByAdmin(searchInput: SearchInput!): GetCoupons!
+  getSingleCouponByAdmin(id: String!): CouponAdmin!
+  getPoints: [Points!]!
+  getUserPoints: UserPoints!
+  getOrders(searchInput: SearchInput!): GetOrders!
+  getOrder(id: String!): Order!
+  getOrderByUser: [Order!]!
+  getSingleOrderByUser(id: String!): Order!
+  getOrdersBySeller(searchInput: SearchInput!): GetOrderSeller!
+  getSingleOrderBySeller(orderSellerId: String!): OrderSeller!
+  trackOrder(trackInput: TrackInput!): Order!
+  getSellers(searchInput: SearchInput!): GetSellers!
+  getSellersByAdmin(searchInput: SearchInput!): GetSellers!
+  getSeller(id: String!): Seller!
+  getSellerByAdmin(id: String!): Seller!
+  getSellerProfile: Seller!
+  getAddress: [Address!]!
+  getCarts: [Cart!]!
+  getRefundableProducts: [Refundable!]!
+  getRefundByUser: [Refund!]!
+  getRefundByAdmin(searchInput: SearchInput!): GetRefund!
+  getWithdrawalByAdmin(sellerId: String!, searchInput: SearchInput!): GetWithdraw!
+  getWithdrawalBySeller(searchInput: SearchInput!): GetWithdraw!
+  getIncomeHistory(searchInput: SearchInput!): GetIncomes!
+  getIncomeStatics(sellerId: String!): IncomeStatics!
+  getProcessingWithdraw: [Withdraw!]!
+  getPlatform: Platform!
+  getShippings(searchInput: SearchInput!): GetShippings!
+  getShipping(id: String!): Shipping!
+  getActiveShipping: Shipping!
+  getFlashes(searchInput: SearchInput!): GetFlashes!
+  getRunningFlashes(searchInput: SearchInput!): GetFlashes!
+  getFlash(id: String!): Flash!
+  getBannerOne: [Banner!]!
+  getBannerTwo: [Banner!]!
+  getSections: [Sections!]!
+  getSingleSection(id: String!): Sections!
+  getSectionProducts: [SectionProduct!]!
+  getProducts(productSearchInput: ProductSearchInput!): GetProducts!
+  getProduct(id: String!): Product!
+  getSellingProduct(id: String!): [Product!]!
+  getFlashProduct(searchInput: SearchInput!, flashId: String!): GetProducts!
+  getNoFlashProduct(searchInput: SearchInput!, sellerId: String!): GetProducts!
+  getUnapprovedProduct(searchInput: SearchInput!): GetProducts!
+  getProductBySeller(searchInput: SearchInput!, id: String!): GetProducts!
+  getOwnSellerProducts(searchInput: SearchInput!): GetProducts!
+  getOwnSellerSingleProduct(id: String!): Product!
+  getSiteSettings: Settings!
+  getWishlist: [Wishlist!]!
+  checkWishlist(productId: String!): CheckWishlist!
+  getPreorder(searchInput: SearchInput!): GetPreorder!
+  getAnalyticsByUser: UserAnalytics!
+  getReviewByProduct(productId: String!): [Review!]!
+  getReviewByAdmin(searchInput: SearchInput!): GetReviews!
+  getReviewBySeller(searchInput: SearchInput!): GetReviews!
+  reviewAvailability(checkReviewInput: CheckReviewInput!): SuccessInfo!
+}
+
+input SearchInput {
+  search: String
+  orderBy: String
+  limit: Int
+  page: Int
+}
+
+input TrackInput {
+  trackId: String!
+}
+
+input ProductSearchInput {
+  search: String
+  seller: String
+  main_Category: String
+  category: String
+  sub_category: [String!]
+  brand: String
+  price: [Float!]
+  visibility: Boolean
+  approved: Boolean
+  order: String
+  sortBy: String
+  limit: Float
+  page: String
+}
+
+input CheckReviewInput {
+  product: String!
+}
+
+type Mutation {
+  signup(signupInput: SignupInput!): SuccessInfo!
+  addAdmins(adminInput: AdminInput!): SuccessInfo!
+  resendOtp(phone: String!): SuccessInfo!
+  phoneLogin(phone: String!): SuccessInfo!
+  verifyPhone(verifyPhoneInput: VerifyPhoneInput!): SuccessInfo!
+  login(loginInput: LoginInput!): SuccessInfo!
+  loginAdmin(loginInput: LoginInput!): SuccessInfo!
+  loginSeller(loginInput: LoginInput!): SuccessInfo!
+  googleLogin(googleInput: GoogleInput!): SuccessInfo!
+  facebookLogin(facebookInput: FacebookInput!): SuccessInfo!
+  updateProfile(updateUserInput: UpdateUserInput!): SuccessInfo!
+  changePassword(changePasswordInput: ChangePasswordInput!): SuccessInfo!
+  forgetPassword(forgetPasswordInput: ForgetPasswordInput!): SuccessInfo!
+  resetPassword(resetPasswordInput: ResetPasswordInput!): SuccessInfo!
+  phoneAvailability(phoneInput: PhoneInput!): SuccessInfo!
+  changePhone(phoneInput: PhoneInput!): SuccessInfo!
+  changePhoneVerify(verifyPhoneInput: VerifyPhoneInput!): SuccessInfo!
+  banOrUnbannedUser(id: String!, status: Boolean!): SuccessInfo!
+  removeAdmin(id: String!): SuccessInfo!
+  addBrand(brandInput: BrandInput!): SuccessInfo!
+  updateBrand(id: String!, brandInput: BrandInput!): SuccessInfo!
+  deleteBrand(id: String!): SuccessInfo!
+  addTag(tagInput: TagInput!): SuccessInfo!
+  updateTag(id: String!, tagInput: TagInput!): SuccessInfo!
+  deleteTag(id: String!): SuccessInfo!
+  addMainCategory(mainCategoryInput: MainCategoryInput!): SuccessInfo!
+  updateMainCategory(mainCategoryInput: MainCategoryInput!, id: String!): SuccessInfo!
+  deleteMainCategory(id: String!): SuccessInfo!
+  addCategory(categoryInput: CategoryInput!): SuccessInfo!
+  updateCategory(categoryInput: CategoryInput!, id: String!): SuccessInfo!
+  deleteCategory(id: String!): SuccessInfo!
+  addSubCategory(subCategoryInput: SubCategoryInput!): SuccessInfo!
+  updateSubCategory(id: String!, subCategoryInput: SubCategoryInput!): SuccessInfo!
+  deleteSubCategory(id: String!): SuccessInfo!
+  addAttribute(attributeInput: AttributeInput!): SuccessInfo!
+  updateAttribute(attributeInput: AttributeInput!, id: String!): SuccessInfo!
+  deleteAttribute(id: String!): SuccessInfo!
+  addCoupon(couponInput: CouponInput!): SuccessInfo!
+  redeemCoupon(redeemInput: RedeemInput!): RedeemInfo!
+  updateCoupon(couponInput: CouponInput!, id: String!): SuccessInfo!
+  applyCoupon(applyInput: ApplyInput!): ApplyInfo!
+  deleteCoupon(id: String!): SuccessInfo!
+  addOrder(orderInput: OrderInput!): OrderSuccessInfo!
+  payAgain(orderId: String!): OrderSuccessInfo!
+  changeOrderStatus(orderSellerId: String!, status: String!): SuccessInfo!
+  cancelOrderStatusByAdmin(orderSellerId: String!): SuccessInfo!
+  cancelOrderStatusByUser(orderSellerId: String!): SuccessInfo!
+  orderNote(id: String!, note: String!): SuccessInfo!
+  createSeller(sellerInput: SellerInput!): SuccessInfo!
+  verifySellerPhone(sellerVerifyInput: SellerVerifyInput!): SuccessInfo!
+  updateSeller(updateSellerInput: UpdateSellerInput!, id: String!): SuccessInfo!
+  banOrUnbannedSeller(id: String!, status: Boolean!): SuccessInfo!
+  verifySeller(id: String!): SuccessInfo!
+  addBankInformation(bankInput: BankInput!): SuccessInfo!
+  addAddress(addressInput: AddressInput!): SuccessInfo!
+  updateAddress(addressInput: AddressInput!, id: String!): SuccessInfo!
+  markAddDefault(id: String!): SuccessInfo!
+  deleteAddress(id: String!): SuccessInfo!
+  addCart(cartInput: CartInput!): SuccessInfo!
+  increaseCart(id: String!): SuccessInfo!
+  decreaseCart(id: String!): SuccessInfo!
+  deleteCart(id: String!): SuccessInfo!
+  addRefund(refundInput: RefundInput!): SuccessInfo!
+  changeRefundStatus(id: String!, refundStatusInput: RefundStatusInput!): SuccessInfo!
+  releasePayment(paymentInput: ReleasePaymentInput!): SuccessInfo!
+  confirmPayment(withdrawId: String!): SuccessInfo!
+  addPlatform(platformInput: PlatformInput!): SuccessInfo!
+  addShipping(shippingInput: ShippingInput!): SuccessInfo!
+  updateShipping(shippingInput: ShippingInput!, id: String!): SuccessInfo!
+  setShippingAsActive(id: String!): SuccessInfo!
+  deleteShipping(id: String!): SuccessInfo!
+  addFlash(flashInput: FlashInput!): SuccessInfo!
+  updateFlash(flashInput: FlashInput!, id: String!): SuccessInfo!
+  deleteFlash(id: String!): SuccessInfo!
+  addBannerOne(bannerInput: BannerInput!): SuccessInfo!
+  updateBannerOne(bannerInput: BannerInput!, id: String!): SuccessInfo!
+  deleteBannerOne(id: String!): SuccessInfo!
+  addBannerTwo(bannerInput: BannerInput!): SuccessInfo!
+  updateBannerTwo(bannerInput: BannerInput!, id: String!): SuccessInfo!
+  deleteBannerTwo(id: String!): SuccessInfo!
+  addSection(sectionInput: SectionInput!): SuccessInfo!
+  updateSection(sectionInput: SectionInput!, id: String!): SuccessInfo!
+  deleteSection(id: String!): SuccessInfo!
+  addProduct(productInput: ProductInput!): SuccessInfo!
+  updateProduct(productInput: ProductInput!, id: String!): SuccessInfo!
+  updateFlashProduct(updateFlashProductInput: UpdateFlashProductInput!): SuccessInfo!
+  changeProductVisibility(id: String!, visibility: Boolean!): SuccessInfo!
+  approvedProduct(id: String!, approved: Boolean!): SuccessInfo!
+  deleteProduct(id: String!): SuccessInfo!
+  addSettings(siteInput: SettingsInput!): SuccessInfo!
+  addWishlist(wishlistInput: WishlistInput!): SuccessInfo!
+  deleteWishlist(id: String!): SuccessInfo!
+  addPreorder(preorderInput: PreorderInput!): SuccessInfo!
+  updatePreorderNote(preorderNoteInput: PreorderNoteInput!, id: String!): SuccessInfo!
+  deletePreorder(id: String!): SuccessInfo!
+  addReviews(reviewInput: ReviewInput!): SuccessInfo!
+  replyReview(replyInput: ReplyInput!): SuccessInfo!
+  changeReviewVisibility(reviewId: String!): SuccessInfo!
+}
+
+input SignupInput {
+  name: String!
+  phone: String!
+  email: String
+  password: String!
+}
+
+input AdminInput {
+  name: String!
+  phone: String!
+  email: String
+  password: String!
+  role: String!
+}
+
+input VerifyPhoneInput {
+  phone: String!
+  otp: String!
+}
+
+input LoginInput {
+  phoneOrEmail: String!
+  password: String!
+}
+
+input GoogleInput {
+  code: String
+  idToken: String
+}
+
+input FacebookInput {
+  userId: String!
+  accessToken: String!
+}
+
+input UpdateUserInput {
+  name: String
+  email: String
+  avatar: String
+}
+
+input ChangePasswordInput {
+  oldPassword: String!
+  newPassword: String!
+}
+
+input ForgetPasswordInput {
+  phone: String!
+}
+
+input ResetPasswordInput {
+  phone: String!
+  code: String!
+  password: String!
+}
+
+input PhoneInput {
+  phone: String!
+}
+
+input BrandInput {
+  name: String!
+  description: String
+  image: String
+}
+
+input TagInput {
+  name: String!
+  description: String
+}
+
+input MainCategoryInput {
+  name: String!
+  image: String
+  description: String
+}
+
+input CategoryInput {
+  name: String!
+  image: String
+  main_category: String!
+}
+
+input SubCategoryInput {
+  name: String!
+  category: String!
+  image: String
+}
+
+input AttributeInput {
+  name: String!
+  values: [ValuesInput!]!
+}
+
+input ValuesInput {
+  value: String!
+  meta: String
+}
+
+input CouponInput {
+  name: String!
+  code: String!
+  discount: String!
+  discountUnit: String!
+  minimumPurchase: String!
+  expires: DateTime!
+}
+
+input RedeemInput {
+  discount: Float!
+  points: Float!
+  minPurchase: Float!
+}
+
+input ApplyInput {
+  code: String!
+  minPurchase: String
+}
+
+input OrderInput {
+  sellers: [OrderSellerInput!]
+  couponDiscount: Float!
+  total: Float!
+  cartId: [String!]!
+  subtotal: Float!
+  shippingFees: Float!
+  shippingCount: Float!
+  estimateDelivery: String!
+  payment: PaymentInput
+  shippingAddress: String!
+  billingAddress: String!
+}
+
+input OrderSellerInput {
+  sellerId: String!
+  shopName: String!
+  products: [OrderProductsInput!]!
+  price: Float!
+}
+
+input OrderProductsInput {
+  productId: String!
+  quantity: Float!
+  variation: [OrderVariationInput!]
+  tax: Float!
+  amount: Float!
+}
+
+input OrderVariationInput {
+  id: String!
+  name: String!
+  variant: String!
+}
+
+input PaymentInput {
+  paymentMethod: String
+  paymentId: String
+  provider: String
+}
+
+input SellerInput {
+  shopName: String!
+  phone: String!
+  password: String!
+  logo: String!
+  banner: String!
+  address: String!
+  metaTitle: String
+  metaDescription: String
+}
+
+input SellerVerifyInput {
+  shopName: String!
+  phone: String!
+  otp: String!
+  password: String!
+  logo: String!
+  banner: String!
+  address: String!
+  metaTitle: String
+  metaDescription: String
+}
+
+input UpdateSellerInput {
+  shopName: String!
+  phone: String!
+  logo: String!
+  banner: String!
+  address: String!
+  metaTitle: String
+  metaDescription: String
+}
+
+input BankInput {
+  name: String!
+  accNumber: String!
+  routing: String!
+  bankName: String!
+  branch: String!
+}
+
+input AddressInput {
+  name: String!
+  phone: String!
+  gender: String
+  address: String!
+  country: String!
+  city: String!
+  area: String!
+  postal: String
+}
+
+input CartInput {
+  productId: String!
+  seller: String!
+  reserved: Float!
+  attributes: [CartVariationInput!]
+}
+
+input CartVariationInput {
+  id: String!
+  name: String!
+  variant: String!
+}
+
+input RefundInput {
+  refundableId: String!
+  quantity: Float!
+  reason: String!
+  description: String!
+}
+
+input RefundStatusInput {
+  status: String!
+}
+
+input ReleasePaymentInput {
+  seller: String!
+  amount: Float!
+  method: String!
+  incomesIds: [String!]!
+}
+
+input PlatformInput {
+  charge: String!
+}
+
+input ShippingInput {
+  name: String!
+  rateInsideDhaka: String!
+  rateOutsideDhaka: String!
+  rateInSavar: String!
+  estimateDelivery: String!
+  description: String
+}
+
+input FlashInput {
+  title: String!
+  image: String
+  thumb: String
+  start: DateTime!
+  expires: DateTime!
+  discount: String!
+  discountUnit: String!
+}
+
+input BannerInput {
+  name: String!
+  url: String!
+  path: String!
+}
+
+input SectionInput {
+  name: String!
+  description: String!
+  base: String!
+  category: String
+  publish: Boolean!
+}
+
+input ProductInput {
+  name: String!
+  main_category: String!
+  category: String
+  sub_category: [String!]
+  brand: String
+  unit: String
+  minPurchase: String
+  tag: [String!]
+  refundAble: Boolean!
+  images: [String!]!
+  youtubeLink: String
+  flash: String
+  price: String!
+  quantity: String
+  discount: String!
+  discountUnit: String!
+  attributes: ProductAttributeInput
+  description: String
+  specification: [ProductSpecificationInput!]
+  visibility: Boolean!
+  meta: ProductMetaInput
+  estimateDelivery: String
+  warranty: String
+  showStock: Boolean!
+  tax: String!
+  taxUnit: String!
+  disclaimer: String!
+}
+
+input ProductAttributeInput {
+  attributeIds: [String!]
+  selectedVariant: [ProductVariantInput!]
+  attributes: [ProductAttributeValueInput!]
+}
+
+input ProductVariantInput {
+  id: String
+  selected: [String!]
+}
+
+input ProductAttributeValueInput {
+  variant: String
+  price: String
+  quantity: String
+  image: String
+}
+
+input ProductSpecificationInput {
+  title: String
+  value: String
+}
+
+input ProductMetaInput {
+  title: String
+  description: String
+  metaTags: [String!]
+  image: String
+}
+
+input UpdateFlashProductInput {
+  flashId: String!
+  productIds: [String!]!
+}
+
+input SettingsInput {
+  logo: String
+  icon: String
+  siteTitle: String
+  slogan: String
+  metaTitle: String
+  metaDescription: String
+  metaTag: [String!]
+  siteUrl: String
+  ogTitle: String
+  ogDescription: String
+  ogImage: String
+  email: String
+  phone: String
+  corporateOffice: String
+  headOffice: String
+  facebook: String
+  instagram: String
+  youtube: String
+  twitter: String
+  linkedIn: String
+}
+
+input WishlistInput {
+  productId: String!
+}
+
+input PreorderInput {
+  firstName: String!
+  lastName: String!
+  phone: String!
+  address: String!
+  email: String!
+  productImage: [String!]
+  productUrl: [String!]!
+}
+
+input PreorderNoteInput {
+  note: String!
+}
+
+input ReviewInput {
+  product: String!
+  seller: String!
+  image: [String!]
+  comment: String!
+  rating: Float!
+}
+
+input ReplyInput {
+  reviewId: String!
+  reply: String!
+}

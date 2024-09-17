@@ -1,73 +1,61 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+ <img src="https://lh3.googleusercontent.com/d/1itTuDTkuBkfMYuRh6MAScV3nxFVGbpmo" width="100" height="100" style="display: block; margin: 0 auto;">
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Nekmart Full Stack Ecommerce Website
+A ecommerce full stack multivendor ecommerce website. It has four part ( You can find all part, in branch section). It is build with nestjs, graphql, and expressjs and postgresssql for backend. For frontend it is build with nextjs, tailwindcss and urql. In frontend it has three part- main website, seller dashboard and admin dashboard.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Run Locally
+- **Download:** Start by downloading the code.
+- **Install Dependencies:** Run `npm i` to install the necessary dependencies.
+- **Launch:** Launch your development environment with `npm run dev`.
+- **Access:** Simply open your web browser and navigate to `localhost:3000`.
 
-## Description
+## Key features
+- Main website part
+- Seller panel, where sellect can manage their products
+- Admin panel, where admin can manage all admin activity
+- Backend API for operating those 3 different frontend.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Tech Toolset
+- React.js
+- Typescript
+- Next.js
+- Tailwind CSS
+- NestJS
+- NodeJS
+- Graphql
+- Apollo Server
+  
+<img src="https://lh3.googleusercontent.com/d/1GTNFYoW8YfRF8AM5Is6rKsIB4No1ImJ_" width="34px" height="30px" /> <img src="https://lh3.googleusercontent.com/d/1kPoywoLU5K4wbJyToKeB-zjVLgIHnkx6" width="30px" height="30px" /> <img src="https://lh3.googleusercontent.com/d/1zquFI2JBL5KaJVxhyWFh1NhBy6_8bTkl" width="135px" height="30px" /> <img src="https://lh3.googleusercontent.com/d/1lmIwVWT-LhcovOkCj4CF8paBGMeP9BNE" width="225px" height="30px" /> <img src="https://lh3.googleusercontent.com/d/1xjdaz8jo8Q_G-O0csalnWNIsz_M0zVaV" width="30px" height="30px" /> <img src="https://lh3.googleusercontent.com/d/18h6cQq7o01IVduVcAhD9lKwi72G2khZw" width="102px" height="30px" /> <img src="https://lh3.googleusercontent.com/d/1w8N0Rhp5JyiG2JEoR3vTa8mDGKVOVWYT" width="30px" height="30px" /> <img src="https://lh3.googleusercontent.com/d/1G3vYeFq-hCVKgjd4OGQqY1k41TOsXzTI" width="102px" height="30px" />
 
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
 
 ## Support
+Need assistance? Drop us a line at info@cabbageweb.com or hop on over to our lively <a href="https://wa.me/message/UAXIYNES562EN1"><img src="https://lh3.googleusercontent.com/d/13j7AgG4Pp_eWgaRoV6XH49vDU7-5TbEm" width="15" height="15"></a> messenger.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Authors
+- [www.cabbageweb.com](https://www.cabbageweb.com/)
+- [www.siamahnaf.com](https://www.siamahnaf.com/)
 
-## Stay in touch
+## Who we are?
+We are your go-to team for web application development. Whether it's creating beautiful frontends, robust backends, or ensuring smooth deployments, we've got you covered.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- **Frontend Development**
+Crafting stunning and responsive user interfaces is our forte. We ensure your web app not only looks great but also delivers an exceptional user experience.
+- **Backend Development**
+We build secure, scalable, and high-performance server-side solutions, tailored to your needs, ensuring your web app runs smoothly.
+- **Deployment Services**
+We handle server setup, configuration, and maintenance, ensuring your web app is deployed securely and efficiently.
 
-## License
+## Connect with us
+<div style="display: flex; align-items: center; gap: 3px;">
+<a href="https://wa.me/message/UAXIYNES562EN1"><img src="https://lh3.googleusercontent.com/d/13j7AgG4Pp_eWgaRoV6XH49vDU7-5TbEm" width="40" height="40"></a>
+<a href="https://www.linkedin.com/in/cabbageweb/" style="margin-right: 8px"><img src="https://lh3.googleusercontent.com/d/1hqME_Okrps0P1tKi18Rl66W7oa334daw" width="40" height="40"></a>
+<a href="https://twitter.com/cabbageweb" style="margin-right: 8px"><img src="https://lh3.googleusercontent.com/d/1gCRI58aHh_TXF7uGOMu9F-E2eN4x6AyS" width="40" height="40"></a>
+<a href="https://www.facebook.com/cabbageweb/" style="margin-right: 8px"><img src="https://lh3.googleusercontent.com/d/1gttW7FCHrt2fNCaVQXEYC_wUCYbOYpTJ" width="40" height="40"></a>
+<a href="https://t.me/siamahnaf198" style="margin-right: 8px"><img src="https://lh3.googleusercontent.com/d/1v8rpDVzSc4GmXS8axq5y3fR1i-OnRRaY" width="40" height="40"></a>
+<a href="https://www.npmjs.com/org/cabbageweb" style="margin-right: 8px"><img src="https://lh3.googleusercontent.com/d/1t6V2ZlSUyDhwgSaJ5CCj_wDxkQIYQKjR" width="40" height="40"></a>
+</div>
 
-Nest is [MIT licensed](LICENSE).
+
+------------
+
+<p align="center" color="red"><a href="https://www.cabbageweb.com/">www.cabbageweb.com</a></p>

@@ -1,4 +1,8 @@
- <img src="https://lh3.googleusercontent.com/d/1itTuDTkuBkfMYuRh6MAScV3nxFVGbpmo" width="100" height="100" style="display: block; margin: 0 auto;">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://res.cloudinary.com/dub0dpenl/image/upload/v1731780157/Personal%20Logo/logo-white_e6fujz.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://res.cloudinary.com/dub0dpenl/image/upload/v1731780152/Personal%20Logo/logo-dark_qqwrqu.png">
+  <img alt="Siam Ahnaf" src="https://res.cloudinary.com/dub0dpenl/image/upload/v1731780152/Personal%20Logo/logo-dark_qqwrqu.png" height="auto" width="240">
+</picture>
 
 # Nekmart Full Stack Ecommerce Website
 A ecommerce full stack multivendor ecommerce website. It has four part ( You can find all part, in branch section). It is build with nestjs, graphql, and expressjs and postgresssql for backend. For frontend it is build with nextjs, tailwindcss and urql. In frontend it has three part- main website, seller dashboard and admin dashboard.
@@ -29,7 +33,7 @@ A ecommerce full stack multivendor ecommerce website. It has four part ( You can
 
 
 ## Support
-Need assistance? Drop us a line at info@cabbageweb.com or hop on over to our lively <a href="https://wa.me/message/UAXIYNES562EN1"><img src="https://lh3.googleusercontent.com/d/13j7AgG4Pp_eWgaRoV6XH49vDU7-5TbEm" width="15" height="15"></a> messenger.
+Need assistance? Drop me a line at mail@siamahnaf.com or hop on over to my lively <a href="https://wa.me/message/UAXIYNES562EN1"><img src="https://lh3.googleusercontent.com/d/13j7AgG4Pp_eWgaRoV6XH49vDU7-5TbEm" width="15" height="15"></a> messenger.
 
 ## Authors
 - [www.cabbageweb.com](https://www.cabbageweb.com/)
